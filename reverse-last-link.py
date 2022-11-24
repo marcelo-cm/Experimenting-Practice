@@ -5,4 +5,4 @@ def reverseLink(head):
         return []
     return reverseLink(head[1:]) + [head[0]]
 
-print(reverseLink([5,6,2,543,52,46,6]))
+print(reverseLink([1,2,3,4]))
