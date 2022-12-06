@@ -50,6 +50,26 @@ def merge(left, right):
 
     return result
 
+def bubble_sort(arr):
+    swapped = False
+    for el in arr:
+        for i in range(len(arr)-1):
+            if arr[i] > arr[i+1]:
+                arr[i],arr[i+1] = arr[i+1], arr[i]
+                swapped = True
+        if swapped == False:
+            return arr
+
+def selection_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    min = None
+    min_idx = None
+    for i in range(len(arr)):
+        if min == None or arr[i] < min:
+            min =  arr[i]
+            min_idx = i
+    return [min] + selection_sort(arr[:min_idx]+arr[min_idx+1:])
 
 arr =  [5,3,2,15,235]
 
@@ -68,3 +88,16 @@ print("----")
 arr =  [5,3,2,15,235]
 print(arr)
 print(merge_sort(arr))
+
+print("----")
+
+arr =  [5,3,2,15,235]
+print(arr)
+bubble_sort(arr)
+print(arr)
+
+print("----")
+
+arr =  [5,3,2,15,235]
+print(arr)
+print(selection_sort(arr))
