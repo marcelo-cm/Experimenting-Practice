@@ -6,3 +6,4 @@ def main():
     print(acronym)
 
 main()
+print('commit & push')

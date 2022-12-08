@@ -6,3 +6,4 @@ def reverseLink(head):
     return reverseLink(head[1:]) + [head[0]]
 
 print(reverseLink([1,2,3,4]))
+print('commit & push')
