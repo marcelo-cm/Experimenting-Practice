@@ -16,8 +16,8 @@ def sum_digits(num):
     return (num % 10) + sum_digits(num // 10)
 
 def reverse_string(string):
-    if not string:
-        return ''
+    if len(string) < 2:
+        return string
     return string[-1] + reverse_string(string[:-1])
 
 def reverse_string_stack(string):
@@ -34,9 +34,17 @@ def sum_reciprocals(num):
         return num
     return (1/num) + sum_reciprocals(num-1)
 
-num = 123
+def sum_squared(nums):
+    if len(nums) <= 0:
+        return ValueError("ValueError: Please input a vaild list of numbers")
+    if len(nums) == 1:
+        return nums[0]*nums[0]
+    return nums[0]*nums[0] + sum_squared(nums[1:])
+
+num = 2
 string = "MARCELO"
 print(sum_digits(num))
 print(reverse_string(string))
 print(reverse_string_stack(string))
 print(sum_reciprocals(num))
+print(sum_squared([1, 2, 3]))

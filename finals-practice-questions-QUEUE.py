@@ -30,7 +30,10 @@ class Queue:
         ---------------
         """
         identical = True
-        if len(self.items) != len(target):
+        if self ==  target:
+            return identical
+        #for this pupose target is a list, but normally target is a queue so use queue methods
+        if len(self.items) != len(target) or len(self.items) == 0 or len(target) == 0:
             identical = False
             return identical
         for i in range(len(target)):
@@ -39,6 +42,7 @@ class Queue:
                 return identical
         return identical
 
+# WHEN WRITING TEST CASES, THINK ABOUT THINGS THAT COULD BREAK YOUR CODE
 
 print("Queue example:")
 q = Queue()

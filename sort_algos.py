@@ -55,14 +55,14 @@ def merge(left, right):
 
 
 def bubble_sort(array):
-    swapped = False
-    for el in array:
+    sorted = False
+    while not sorted:
+        sorted = True
         for i in range(len(array) - 1):
             if array[i] > array[i + 1]:
                 array[i], array[i + 1] = array[i + 1], array[i]
-                swapped = True
-        if not swapped:
-            return array
+                sorted = False
+    return array
 
 
 def selection_sort(array):
